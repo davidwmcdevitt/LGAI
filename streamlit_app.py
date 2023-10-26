@@ -41,7 +41,7 @@ for message in st.session_state.messages:
         
         st.write("-"*50)
         
-        st.write(copyright_msg)
+        #st.write(copyright_msg)
 
 def clear_chat_history():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
