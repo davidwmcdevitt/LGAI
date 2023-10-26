@@ -7,6 +7,13 @@ st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
 
 replicate_api = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
 
+os.environ['REPLICATE_API_TOKEN'] = replicate_api
+
+copyright_eval = "No Risk"
+    if copyright_eval == "No Risk":
+        copyright_msg = "\n\n No copyright infringement has been detected in these outputs."
+    
+
 # Replicate Credentials
 with st.sidebar:
     st.title('LGAI490 - Copyright Infringement in Generative Text Outputs')
@@ -77,10 +84,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 placeholder.markdown(full_response)
             placeholder.markdown(full_response)
 
-    copyright_eval = "No Risk"
-    if copyright_eval == "No Risk":
-        copyright_msg = "-----------------------------------\n No copyright infringement has been detected in these outputs. \n-----------------------------------"
-        full_response = full_response + copyright_msg
+    full_response = full_response + copyright_msg
     message = {"role": "assistant", "content": full_response}
     
     st.session_state.messages.append(message)
