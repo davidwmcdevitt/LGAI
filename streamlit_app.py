@@ -37,18 +37,6 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
 
-        if message["role"] == "assistant":
-        
-            st.write("-"*50)
-            
-            if copyright_eval == "No Risk":
-                copyright_msg = "\n\n No copyright infringement has been detected in these outputs."
-    
-
-            st.write(copyright_msg)
-        
-        #st.write(copyright_msg)
-
 def clear_chat_history():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
 st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
@@ -75,7 +63,7 @@ if prompt := st.chat_input(disabled=not replicate_api):
 # Generate a new response if last message is not from assistant
 if st.session_state.messages[-1]["role"] != "assistant":
     if copyright_eval == "No Risk":
-        copyright_msg = "\n\n" + "-" * 50 + "\n\n No copyright infringement has been detected in these outputs.\n\n" + "-" * 50
+        copyright_msg =  "\n\n No copyright infringement has been detected in these outputs.\n\n"
     
     
     with st.chat_message("assistant"):
