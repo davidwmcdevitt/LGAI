@@ -10,8 +10,8 @@ replicate_api = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
 os.environ['REPLICATE_API_TOKEN'] = replicate_api
 
 copyright_eval = "No Risk"
-    if copyright_eval == "No Risk":
-        copyright_msg = "\n\n No copyright infringement has been detected in these outputs."
+if copyright_eval == "No Risk":
+    copyright_msg = "\n\n No copyright infringement has been detected in these outputs."
     
 
 # Replicate Credentials
