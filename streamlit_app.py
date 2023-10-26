@@ -14,12 +14,6 @@ if copyright_eval == "No Risk":
 
 # Replicate Credentials
 with st.sidebar:
-    
-    api_token = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
-    
-    os.environ['REPLICATE_API_TOKEN'] = api_token
-    replicate_api = st.secrets['REPLICATE_API_TOKEN']
-    
     st.title('LGAI490 - Copyright Infringement in Generative Text Outputs')
     st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
     if 'REPLICATE_API_TOKEN' in st.secrets:
@@ -31,7 +25,7 @@ with st.sidebar:
             st.warning('Please enter your credentials!', icon='⚠️')
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
-    os.environ['REPLICATE_API_TOKEN'] = replicate_api
+    os.environ['REPLICATE_API_TOKEN'] = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
 
     st.subheader('Models and parameters')
     selected_model = st.sidebar.selectbox('Choose a Llama2 model', ['Llama2-7B', 'Llama2-13B'], key='selected_model')
