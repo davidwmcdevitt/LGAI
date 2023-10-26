@@ -38,8 +38,10 @@ if "messages" not in st.session_state.keys():
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
+
+        if message["role"] == "assistant":
         
-        st.write("-"*50)
+            st.write("-"*50)
         
         #st.write(copyright_msg)
 
