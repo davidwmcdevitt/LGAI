@@ -16,6 +16,7 @@ if copyright_eval == "No Risk":
 with st.sidebar:
     st.title('LGAI490 - Copyright Infringement in Generative Text Outputs')
     st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
+    '''
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided!', icon='✅')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
@@ -25,6 +26,8 @@ with st.sidebar:
             st.warning('Please enter your credentials!', icon='⚠️')
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
+    '''
+    st.success('Proceed to entering your prompt message!', icon='👉')
     os.environ['REPLICATE_API_TOKEN'] = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
 
     st.subheader('Models and parameters')
@@ -46,6 +49,10 @@ if "messages" not in st.session_state.keys():
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
+        
+        st.write("-"*50)
+        
+        st.write(message["copyright"])
 
 def clear_chat_history():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
@@ -82,7 +89,6 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 placeholder.markdown(full_response)
             placeholder.markdown(full_response)
 
-    full_response = full_response + copyright_msg
-    message = {"role": "assistant", "content": full_response}
+    message = {"role": "assistant", "content": full_response, "copyright": copyright_msg}
     
     st.session_state.messages.append(message)
