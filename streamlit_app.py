@@ -8,9 +8,7 @@ replicate_api = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
 
 
 copyright_eval = "No Risk"
-if copyright_eval == "No Risk":
-    copyright_msg = "\n\n No copyright infringement has been detected in these outputs."
-    
+
 
 # Replicate Credentials
 with st.sidebar:
@@ -76,6 +74,10 @@ if prompt := st.chat_input(disabled=not replicate_api):
 
 # Generate a new response if last message is not from assistant
 if st.session_state.messages[-1]["role"] != "assistant":
+    if copyright_eval == "No Risk":
+        copyright_msg = "\n\n No copyright infringement has been detected in these outputs."
+    
+    
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             response = generate_llama2_response(prompt)
