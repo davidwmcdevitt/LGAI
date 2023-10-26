@@ -5,6 +5,8 @@ import os
 # App title
 st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
 
+replicate_api = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
+
 # Replicate Credentials
 with st.sidebar:
     st.title('🦙💬 Llama 2 Chatbot')
