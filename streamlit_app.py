@@ -87,7 +87,7 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 full_response += item
                 placeholder.markdown(full_response)
             placeholder.markdown(full_response)
-            placeholder.markdown(copyrigh_msg)
+            placeholder.markdown(copyright_msg)
             
 
     message = {"role": "assistant", "content": full_response}
