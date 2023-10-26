@@ -5,9 +5,10 @@ import os
 # App title
 st.set_page_config(page_title="🦙💬 Llama 2 Chatbot")
 
-replicate_api = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
+api_token = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
 
 os.environ['REPLICATE_API_TOKEN'] = replicate_api
+replicate_api = st.secrets['REPLICATE_API_TOKEN']
 
 copyright_eval = "No Risk"
 if copyright_eval == "No Risk":
