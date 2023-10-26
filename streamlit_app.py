@@ -63,7 +63,7 @@ if prompt := st.chat_input(disabled=not replicate_api):
 # Generate a new response if last message is not from assistant
 if st.session_state.messages[-1]["role"] != "assistant":
     if copyright_eval == "No Risk":
-        copyright_msg =  "\n\n No copyright infringement has been detected in these outputs.\n\n"
+        copyright_msg =  "\n\n No copyright infringement has been detected in these outputs."
     
     
     with st.chat_message("assistant"):
