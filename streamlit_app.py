@@ -41,7 +41,7 @@ for message in st.session_state.messages:
         
         st.write("-"*50)
         
-        st.write(message["copyright"])
+        st.write(copyright_msg)
 
 def clear_chat_history():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
@@ -78,6 +78,6 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 placeholder.markdown(full_response)
             placeholder.markdown(full_response)
 
-    message = {"role": "assistant", "content": full_response, "copyright": copyright_msg}
+    message = {"role": "assistant", "content": full_response}
     
     st.session_state.messages.append(message)
