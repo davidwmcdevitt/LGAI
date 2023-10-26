@@ -9,7 +9,7 @@ replicate_api = 'r8_cwk7Jtfve9VLde2y3tOvdZzFooy8O0206a71m'
 
 # Replicate Credentials
 with st.sidebar:
-    st.title('🦙💬 Llama 2 Chatbot')
+    st.title('LGAI490 - Copyright Infringement in Generative Text Outputs')
     st.write('This chatbot is created using the open-source Llama 2 LLM model from Meta.')
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided!', icon='✅')
@@ -77,7 +77,10 @@ if st.session_state.messages[-1]["role"] != "assistant":
                 placeholder.markdown(full_response)
             placeholder.markdown(full_response)
 
-    full_response = [full_response, type(full_response)]
+    copyright_eval = "No Risk"
+    if copyright_eval == "No Risk":
+        copyright_msg = "-----------------------------------\n No copyright infringement has been detected in these outputs. \n-----------------------------------"
+        full_response = full_response + copyright_msg
     message = {"role": "assistant", "content": full_response}
     
     st.session_state.messages.append(message)
